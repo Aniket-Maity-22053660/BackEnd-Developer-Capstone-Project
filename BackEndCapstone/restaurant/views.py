@@ -11,6 +11,7 @@ def index(request):
     return render(request, 'index.html', {})
 
 class MenuView(generics.ListCreateAPIView):
+    throttle_classes = [UserRateThrottle]
     permission_classes = [IsAuthenticated]
     queryset=Menu.objects.all()
     serializer_class = serializers.MenuSerializer
