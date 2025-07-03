@@ -18,8 +18,9 @@ class SingleMenuView(generics.RetrieveUpdateDestroyAPIView):
     queryset=Menu.objects.all()
     serializer_class = serializers.MenuSerializer
 class BookingViewSet(viewsets.ModelViewSet):
-   # permission_classes = [AllowAny]
-   # throttle_classes = [AnonRateThrottle]
+    #permission_classes = [AllowAny]
+    #throttle_classes = [AnonRateThrottle]
+    throttle_classes = [UserRateThrottle]
     permission_classes = [IsAuthenticated]
     queryset= Booking.objects.all()
     serializer_class= serializers.BookingSerializer

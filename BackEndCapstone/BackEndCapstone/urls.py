@@ -26,7 +26,7 @@ urlpatterns = [
     path('restaurant/menu/',include('restaurant.urls')),
     path('restaurant/booking/', include(router.urls)),
     path('view/', views.index),
-    path('api-auth-token/', obtain_auth_token),
+    path('my-auth-token/', obtain_auth_token),
     path('auth/', include('djoser.urls')),
     path('auth/', include('djoser.urls.authtoken')),
 ]
